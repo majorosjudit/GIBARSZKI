@@ -52,6 +52,26 @@ a{ color:inherit; text-decoration:none; }
 ul{ margin:0; padding:0; list-style:none; }
 h1,h2,h3,h4{ margin:0; font-weight:800; line-height:1.18; color:var(--navy-900); }
 p{ margin:0; }
+
+/* ---------- justified body copy ----------
+   Sorkizárt szöveg a hosszabb, futó szövegblokkokban (bemutatkozás,
+   szolgáltatás- és referenciakártyák, tapasztalat idővonal, lábléc),
+   hogy a sorok egyenletes hosszúságúak legyenek, és ne lógjon ki
+   egyetlen rövid szó (pl. "a") a sor végén. A címsorokat, bevezető
+   mondatokat és a középre igazított szövegeket ez szándékosan nem
+   érinti. */
+.about-copy p,
+.card p,
+.timeline-card p,
+.step p,
+.ref-body p,
+.footer-brand p{
+  text-align:justify;
+  text-align-last:left;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  -ms-hyphens:auto;
+}
 .container{
   width:100%;
   max-width:var(--container);
