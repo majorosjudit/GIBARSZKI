@@ -427,6 +427,42 @@ section{ padding:88px 0; }
 }
 
 /* =========================================================
+   PROOF STRIP — folyamatosan gördülő fotósáv (pl. főoldalon,
+   a Rólam-előnézet és a Szolgáltatások szekció között)
+   ========================================================= */
+.proof-strip{
+  overflow:hidden;
+  padding:0;
+  background:var(--blue-pale-2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.proof-strip .marquee{
+  display:flex;
+  width:max-content;
+  gap:6px;
+  animation:marquee-scroll 34s linear infinite;
+}
+.proof-strip:hover .marquee{ animation-play-state:paused; }
+.proof-strip .marquee img{
+  height:300px;
+  width:auto;
+  max-width:none;
+  flex:none;
+  object-fit:cover;
+}
+@keyframes marquee-scroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+@media (max-width:680px){
+  .proof-strip .marquee img{ height:170px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .proof-strip .marquee{ animation:none; }
+}
+
+/* =========================================================
    CARDS (services / references)
    ========================================================= */
 .grid{ display:grid; gap:26px; }
